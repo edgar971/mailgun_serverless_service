@@ -1,0 +1,14 @@
+{
+  "name": "email_send_aws",
+  "version": "1.0.0",
+  "description": "AWS Lambda function to send email using Mailgun. ",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edgar Pino <edgarbeltran@me.com>",
+  "license": "ISC",
+  "dependencies": {
+    "mailgun-js": "^0.8.0"
+  }
+}
