@@ -6,13 +6,14 @@ let api_key = process.env.MAILGUN_API_KEY,
 
 
 function processData(event) {
-
+  let body = JSON.parse(event.body);
   let data = {
-    from: event.body.name + " <" + event.body.from  + ">",
+    from: body.name + " <" + body.from  + ">",
     to: process.env.MAILGUN_API_EMAIL_TO,
     subject: process.env.MAILGUN_API_EMAIL_SUBJECT || 'Message From Site',
-    text: event.body.message || ''
+    text: body.message || ''
   };
+  
 
 
   return data;
@@ -28,7 +29,7 @@ module.exports.hello = (event, context, callback) => {
     const response = {
       statusCode: 200,
       body: JSON.stringify({
-          message: event.body  
+          message: body
       }),
     };
 

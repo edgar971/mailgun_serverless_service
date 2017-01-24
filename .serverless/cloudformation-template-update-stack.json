@@ -88,7 +88,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/emailSend/dev/1485182994594-2017-01-23T14:49:54.594Z/emailSend.zip"
+          "S3Key": "serverless/emailSend/dev/1485232595440-2017-01-24T04:36:35.440Z/emailSend.zip"
         },
         "FunctionName": "emailSend-dev-hello",
         "Handler": "handler.hello",
@@ -107,14 +107,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "HelloLambdaVersionvMbm9fTIAJdQQmWU89mQG4IrnwkZPRxpP9D9RmqI": {
+    "HelloLambdaVersionv0Jt3s8P0xfkjRFQHjdLo4uAMuSusDs4NGqmBTIdjw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "HelloLambdaFunction"
         },
-        "CodeSha256": "vMbm+9fTIAJd+QQmWU89mQG4IrnwkZPRxpP/9D9RmqI="
+        "CodeSha256": "v0Jt3s8P0xfkjRFQHjdLo4uAMuS+usDs4NGqmBTIdjw="
       }
     },
     "ApiGatewayRestApi": {
@@ -200,7 +200,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1485182994613": {
+    "ApiGatewayDeployment1485232595467": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -264,7 +264,7 @@
     "HelloLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersionvMbm9fTIAJdQQmWU89mQG4IrnwkZPRxpP9D9RmqI"
+        "Ref": "HelloLambdaVersionv0Jt3s8P0xfkjRFQHjdLo4uAMuSusDs4NGqmBTIdjw"
       }
     },
     "ServiceEndpoint": {
