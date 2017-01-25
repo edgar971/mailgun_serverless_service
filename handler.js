@@ -2,9 +2,14 @@
 
 let api_key = process.env.MAILGUN_API_KEY,
     domain = process.env.MAILGUN_API_DOMAIN,
-    mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+    mailgun = require('mailgun-js')({
+      apiKey: api_key, domain: domain
+    });
 
-
+/**
+ * Function to create the structure of Mailgun email. 
+ * 
+ */
 function processData(event) {
   let body = JSON.parse(event.body);
   let data = {
@@ -13,8 +18,6 @@ function processData(event) {
     subject: process.env.MAILGUN_API_EMAIL_SUBJECT || 'Message From Site',
     text: body.message || ''
   };
-  
-
 
   return data;
 
@@ -22,8 +25,10 @@ function processData(event) {
 
 module.exports.hello = (event, context, callback) => {
 
+  // Get the data
   let data = processData(event);
 
+  // Send the message
   mailgun.messages().send(data, function (error, body) {
     
     const response = {
@@ -36,7 +41,6 @@ module.exports.hello = (event, context, callback) => {
     callback(null, response);
     
   });
-  
   
 
   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
